@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageFrAdmin.master.cs" Inherits="MasterPageFrAdmin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Admin Panal - Onine Banking</title>
+    <link rel="Stylesheet" href="css/StyleSheet.css" type="text/css" media="screen" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="panalWrap">
+        <h1 class="header">Online Banking</h1>
+        <div class="panalMain">
+            <%
+                Admin AdminData = Admin.GetAll_DataById((int)Session["id"]);
+                var AdminName = AdminData.Name;
+            %>
+            <div class="welcome"><span>Welcome <strong><% Response.Write(AdminName); %></strong></span> &nbsp;&nbsp;&nbsp;
+            <a href="~/Admin/adminLogout.aspx" runat="server">Log Out</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+            <a id="A2" href="~/Admin/Default.aspx" runat="server">Dashboard</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+            <a href="~/Admin/add_cust.aspx" runat="server">New Customer</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+            <a id="A1" href="~/Admin/all_custs.aspx" runat="server">All Customers</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+            <a id="A3" href="~/Admin/net_banking.aspx" runat="server">Net Banking Users</a>
+            </div>
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

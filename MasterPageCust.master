@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageCust.master.cs" Inherits="MasterPageCust" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Admin Panal - Onine Banking</title>
+    <link rel="Stylesheet" href="css/StyleSheet.css" type="text/css" media="screen" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="wrap">
+        <h1 class="header">Online Banking</h1>
+        <div class="main">
+            <%
+                Customers GetCustDataById = Customers.GetCust_DataById((int)Session["Cust_Id"]);
+                var CustName = GetCustDataById.Cust_Name_2;
+            %>
+            <div class="menu">
+                <span>Welcome <strong><% Response.Write(CustName); %></strong></span> &nbsp;&nbsp;&nbsp;
+                <a id="A3" href="~/users/cust_logout.aspx" runat="server">Log Out</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+                <a id="A1" href="~/users/Default.aspx" runat="server">Dashboard</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+                <a id="A2" href="~/users/bill_pay.aspx" runat="server">Bill Pay</a>
+            </div>
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Online Banking</title>
+    <link rel="Stylesheet" href="css/StyleSheet.css" type="text/css" media="screen" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="wrap">
+        <h1 class="header">Online Banking</h1>
+        <div class="main">
+            <div class="menu">
+                <a href="Default.aspx" runat="server">Home</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+                <a href="~/aply_netbanking.aspx" runat="server">Net Banking</a>
+            </div>
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        </div>
+    </form>
+</body>
+</html>
