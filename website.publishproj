@@ -21,7 +21,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
     <ProjectGuid>{455ed104-58e8-4372-a0bf-b171799f5015}</ProjectGuid>
     <SourceWebPhysicalPath>$(MSBuildThisFileDirectory)</SourceWebPhysicalPath>
     <SourceWebVirtualPath>/Banking Solution</SourceWebVirtualPath>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <SourceWebProject></SourceWebProject>
     <SourceWebMetabasePath></SourceWebMetabasePath>
   </PropertyGroup>
